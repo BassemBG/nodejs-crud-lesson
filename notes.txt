@@ -1,0 +1,14 @@
+3malna npm I -g express-generator bech nwali najem ngeneri squelette ta3 express
+
+express --view=twig myapp
+-> tasna3li l projet w hajet hadhra les middlewares mathalan
+
+
+wala na3mlou project wahadna:
+- npm init
+- npm i express twig mysql2 sequelize
+- zedna hedhi f package.json:    "start": "node server.js", nwaliw nektbou npm start toul ye5dem project
+
+go to the config.json file and configure db
+
+nzidou database.js f folder database eli ninitializiw fiha db w nasn3ou models
