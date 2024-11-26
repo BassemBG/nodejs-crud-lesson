@@ -12,3 +12,5 @@ wala na3mlou project wahadna:
 go to the config.json file and configure db
 
 nzidou database.js f folder database eli ninitializiw fiha db w nasn3ou models
+
+ken badalt haja f twig lezem ntayah server w reopen it
