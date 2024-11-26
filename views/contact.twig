@@ -1,23 +1,30 @@
 {% extends 'layout.twig' %}
- 
+
 {% block body %}
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
-  <div>
-  <h2>Add contact</h2>
-  <form action="/contacts/create" method="POST" >
-  <label for="FullName">FullName</label>
-  <input type="text" id="fullName" name="fullName" placeholder="Add a FullName"/>
-  <label for="Phone">FullName</label>
-  <input type="number" id="phone" name="phone" placeholder="Add a Phone"/>
-  <input type="submit" value="Save" />
-  </form>
-  <h2>Contact list</h2>
-  <hr>
-  {% for contact in contacts %}
-  <p><b>FullName : </b>{{ contact.FullName }}</p>
-  <p><b>Phone : </b>{{ contact.Phone }}</p>
-  <hr>
-  {% endfor %}
-  </div>
+	<h1>{{title}}</h1>
+	<p>Welcome to
+		{{title}}</p>
+	<div>
+		<h2>Add contact</h2>
+		<form action="/contacts/create" method="POST">
+			<label for="FullName">FullName</label>
+			<input type="text" id="fullName" name="fullName" placeholder="Add a FullName"/>
+			<label for="Phone">FullName</label>
+			<input type="number" id="phone" name="phone" placeholder="Add a Phone"/>
+			<input type="submit" value="Save"/>
+		</form>
+		<h2>Contact list</h2>
+		<hr>
+		{% for contact in contacts %}
+			<p>
+				<b>FullName :
+				</b>
+				{{ contact.fullName }}</p>
+			<p>
+				<b>Phone :
+				</b>
+				{{ contact.phone }}</p>
+			<hr>
+		{% endfor %}
+	</div>
 {% endblock %}
