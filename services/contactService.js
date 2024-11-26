@@ -8,4 +8,18 @@ async function createContact(req, res, next){
 
 }
 
-module.exports = {createContact}
+
+async function findAll(req, res, next){
+
+    try {    
+        const { Contact } = await db();
+        const contacts = await Contact.findAll();
+        res.render('contact.twig', { title: "My Form", contacts: contacts})
+    } catch(e){
+        console.log(e);
+        res.status(500).send("Internal Error");
+    }
+}
+
+
+module.exports = {createContact, findAll}
