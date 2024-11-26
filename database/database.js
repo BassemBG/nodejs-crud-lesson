@@ -14,7 +14,7 @@ async function initialize(){
     
     // Initialize models and add them to the exported db object
     const models = {
-        // Contact: require('../models/contact')(sequelize),
+        Contact: require('../models/contact')(sequelize),
         // Add models here if needed
     };
     
