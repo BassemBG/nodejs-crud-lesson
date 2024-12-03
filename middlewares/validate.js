@@ -22,5 +22,26 @@ const contactSchema = yup.object({
     })
 });
  
+
+// User schema
+const userSchema = yup.object({
+    body: yup.object({
+      username: yup
+        .string()
+        .required("Username is required")
+        .min(2, "Username must be at least 2 characters")
+        .max(5, "Username must be at most 5 characters"),
+      password: yup
+        .number()
+        .required("Password is required")
+        .typeError("Password must be a number"),
+      birthday: yup
+        .date()
+        .required("Birthday is required")
+        .max(new Date(), "Birthday must be in the past")
+        .typeError("Birthday must be a valid date"),
+    }),
+  });
+  
  
-module.exports = { validate, contactSchema };
+module.exports = { validate, contactSchema, userSchema };
