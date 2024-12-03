@@ -16,7 +16,7 @@ async function findAllUsers(req, res, next) {
   try {
     const { User } = await db();
     const users = await User.findAll();
-    res.render("user.twig", { title: "User List", users });
+    res.render("users/list.twig", { title: "User List", users });
   } catch (e) {
     console.error("Error fetching users:", e);
     res.status(500).send("Internal Server Error");
@@ -57,7 +57,7 @@ async function updateForm(req, res, next) {
     const { User } = await db();
     const foundUser = await User.findOne({ where: { id: req.params["id"] } });
     if (!foundUser) return res.status(404).send("User not found");
-    res.render("updateUser.twig", { user: foundUser });
+    res.render("users/update.twig", { user: foundUser });
   } catch (e) {
     console.error("Error rendering update form:", e);
     res.status(500).send("Internal Server Error");
