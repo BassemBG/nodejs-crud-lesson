@@ -39,7 +39,24 @@ async function deleteContact(req, res, next) {
     }
 }
 
+async function updateContact(req, res, next) {
+    try {
+        const { Contact } = await db();   
+        const {id,fullName, phone } = req.body; 
+
+        
+         await Contact.update(
+            { fullName, phone },       
+            { where: { id } }          
+        );
+        res.redirect('/contacts');
+
+    } catch (e) {
+        console.error("Error during contact update:", e);
+        res.status(500).send("Internal Server Error");
+    }
+}
 
 
 
-module.exports = {createContact, findAll}
+module.exports = {createContact, findAll, deleteContact, updateContact}
