@@ -58,5 +58,14 @@ async function updateContact(req, res, next) {
 }
 
 
+async function updateForm(req,res,next){
+    const { Contact } = await db(); 
+    const foundContact= await Contact.findOne({where:{
+        id:req.params['id']
+    }});
+    res.render("update.twig",{contact: foundContact})
+}
+
+
 
 module.exports = {createContact, findAll, deleteContact, updateContact}
