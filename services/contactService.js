@@ -21,4 +21,25 @@ async function findAll(req, res, next){
 }
 
 
+async function deleteContact(req, res, next) {
+    try {
+        const { Contact } = await db(); 
+        const {id} = req.params;     
+
+        
+        await Contact.destroy({ where: {id} });
+
+        res.redirect(('/contacts'));
+        
+
+
+    } catch (e) {
+        console.error("Error during contact deletion:", e);
+        res.status(500).send("Internal Server Error");
+    }
+}
+
+
+
+
 module.exports = {createContact, findAll}
