@@ -68,4 +68,4 @@ async function updateForm(req,res,next){
 
 
 
-module.exports = {createContact, findAll, deleteContact, updateContact}
+module.exports = {createContact, findAll, deleteContact, updateContact, updateForm}
